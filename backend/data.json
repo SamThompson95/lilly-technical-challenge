@@ -29,6 +29,11 @@
             "id": 6,
             "name": "Metformin",
             "price": 9.99
+        },
+        {
+            "id": 8,
+            "name": "Moo",
+            "price": 399.0
         }
     ]
 }
