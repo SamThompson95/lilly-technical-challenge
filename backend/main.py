@@ -1,4 +1,19 @@
 from fastapi import FastAPI, Form
+"""
+This module defines a FastAPI application for managing a list of medicines.
+It provides endpoints to retrieve all medicines, retrieve a single medicine by name,
+and create a new medicine.
+Endpoints:
+- GET /medicines: Retrieve all medicines from the data.json file.
+- GET /medicines/{med_name}: Retrieve a single medicine by name from the data.json file.
+- POST /medicines/create: Create a new medicine with a specified name and price.
+Functions:
+- get_all_meds: Reads the data.json file and returns all medicines.
+- get_single_med: Reads the data.json file and returns a single medicine by name.
+- create_med: Reads the data.json file, adds a new medicine, and writes the updated data back to the file.
+Usage:
+Run this module directly to start the FastAPI application.
+"""
 import uvicorn
 import json
 
@@ -31,6 +46,8 @@ def create_med(name: str = Form(...), price: float = Form(...)):
         meds.truncate()
         
     return {"message": f"Medicine created successfully with name: {name}"}
+
+# Add your average function here
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
