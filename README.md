@@ -9,7 +9,13 @@ A repository containing the Eli Lilly student developer technical challenge.
 - The frontend site's design leaves a lot to be desired. Can you make any improvement to the overall design and user experience? (this one is open-ended; feel free to be creative here!)
 - You are provided a documentation template and are encouraged to fill this out as you work through this challenge. This will help when it comes time to present your work.
 
-### Optional Objectives
+## Optional Objectives
 *These objectives can be completed if you have time or would like to be challenged.*
   
 - The raw data returned from the backend is a little hard to digest. Can you create a backend function for averaging prices for a particular medicine?
+
+## Scope
+
+### In Scope
+
+### Out of Scope
