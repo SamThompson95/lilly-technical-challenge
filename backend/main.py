@@ -21,16 +21,16 @@ def get_single_med(med_name: str):
     return {"error": "Medicine not found"}
 
 @app.post("/medicines/create")
-def create_med(id: int = Form(...), name: str = Form(...), price: float = Form(...)):
+def create_med(name: str = Form(...), price: float = Form(...)):
     with open('data.json', 'r+') as meds:
         current_db = json.load(meds)
-        new_med = {"id": id, "name": name, "price": price}
+        new_med = {"name": name, "price": price}
         current_db["medicines"].append(new_med)
         meds.seek(0)
         json.dump(current_db, meds)
         meds.truncate()
         
-    return {"message": "Medicine created"}
+    return {"message": f"Medicine created successfully with name: {name}"}
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
