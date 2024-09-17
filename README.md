@@ -26,7 +26,7 @@ If you are struggling to get started with the GitHub side of things, you can fol
 3. Clone the challenge repository into the folder:
 
 ```bash
-git clone https://github.com/SamThompson95/lilly-technical-challenge
+git clone https://github.com/SamThompson95/lilly-technical-challenge.git
 cd lilly-technical-challenge
 ```
 
