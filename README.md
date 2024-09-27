@@ -40,7 +40,7 @@ git push
 
 
 ## Objectives
-- Fetch data from the backend server from the frontend, and display it in a user-friendly way.
+- Fetch data from the backend server and send it to the the frontend displaying it in a user-friendly way.
 - A data engineer had some issues migrating data, leaving some gaps in our database. How can you ensure that the frontend handles missing/invalid data returned from the APIs without crashing?
 - You can send data to the backend via API(s), however it is not particularly user-friendly. How will you create a user-friendly solution that allows users to input data on the site and send it to the backend?
 - The frontend site's design leaves a lot to be desired. Can you make any improvement to the overall design and user experience? (this one is open-ended; feel free to be creative here!)
@@ -49,10 +49,17 @@ git push
 ## Optional Objectives
 *These objectives can be completed if you have time or would like to be challenged.*
   
-- The raw data returned from the backend is a little hard to digest. Can you create a backend function for averaging prices for a particular medicine?
+- The boss has asked me for quarterly report. Can you create a backend function for averaging prices of all our medicines?
 
 ## Scope
 
-### In Scope
+### In Scope (You may modify these)
+- main.py
+- the whole frontend folder:
+    - script.js
+    - style.css
+    - index.html
 
-### Out of Scope
+### Out of Scope (Do not modify these)
+ - data.json
+ - requirements.txt
