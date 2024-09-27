@@ -63,3 +63,4 @@ git push
 ### Out of Scope (Do not modify these)
  - data.json
  - requirements.txt
+ - start.sh
