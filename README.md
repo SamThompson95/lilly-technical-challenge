@@ -59,8 +59,14 @@ git push
     - script.js
     - style.css
     - index.html
+- DOCUMENTATION.md (fill this out as you work through the challenge)
+- DOCUMENTATION.docx (fill this out as you work through the challenge)
+
+*Note: You only need to fill out one of the documentation files. Choose one of the documentation templates and feel free to delete the other. Alternatively, create your own documentation file in any format you wish.*
 
 ### Out of Scope (Do not modify these)
  - data.json
  - requirements.txt
  - start.sh
+ - start.ps1
+ - start.bat
