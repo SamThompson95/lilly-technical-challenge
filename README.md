@@ -38,6 +38,24 @@ git push
 ```
 *Ensure you have a remote repository set up on GitHub. You will be committing and pushing changes from your local Git repository to the remote GitHub repository. You can go [here](https://github.com/new) to create a new repository, and [here](https://docs.github.com/en/get-started/using-git/about-git) to understand the basics of Git. You may need to specify the upstream (i.e. remote GitHub repository) repo that you want to push to. See [this guide](https://devopscube.com/set-git-upstream-respository-branch/) on how to do that.*
 
+### Environment Setup
+Once you have installed Python and Git, have your IDE set up, and have cloned the repository, you can use one of the provided `start` scripts to activate the [Python virtual environment](https://docs.python.org/3/library/venv.html), install Python dependencies, and start the backend server.
+
+Setup scripts are provided for Mac, Linux and Windows. You can run the appropriate script for your operating system to get started.
+
+#### Mac/Linux
+```bash
+./start.sh
+```
+
+#### Windows
+```bash
+./start.ps1
+
+# or
+
+./start.bat
+```
 
 ## Objectives
 - Fetch data from the backend server and send it to the the frontend displaying it in a user-friendly way.
