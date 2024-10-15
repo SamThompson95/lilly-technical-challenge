@@ -7,7 +7,7 @@ A repository containing the Eli Lilly student developer technical challenge.
 This challenge consists of a backend written in [Python](https://www.python.org/) and a frontend written using HTML, CSS and JavaScript.
 
 1. You will need to install Python in order to run the backend server. See the link above or go [here](https://www.python.org/downloads/).
-2. You will need to install Git to handle committs and source code management. You can download Git [here](https://git-scm.com/downloads). When prompted, ensure you add the Git executable to your system's `PATH`. If you get errors like `not found: Git`, follow [this guide](https://stackoverflow.com/questions/26620312/git-installing-git-in-path-with-github-client-for-windows) to add it to `PATH` manually.
+2. You will need to install Git to handle commits and source code management. You can download Git [here](https://git-scm.com/downloads). When prompted, ensure you add the Git executable to your system's `PATH`. If you get errors like `not found: Git`, follow [this guide](https://stackoverflow.com/questions/26620312/git-installing-git-in-path-with-github-client-for-windows) to add it to `PATH` manually.
 3. You will likely want to use an Integrated Development Environment (IDE) or Code Editor. We recommend [Visual Studio Code](https://code.visualstudio.com/Download).
 4. You will need a GitHub account in order to [clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) this repository and [commit](https://github.com/git-guides/git-commit) your changes.
 
