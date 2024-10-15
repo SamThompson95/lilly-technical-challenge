@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Form
+from fastapi.middleware.cors import CORSMiddleware
 """
 This module defines a FastAPI application for managing a list of medicines.
 It provides endpoints to retrieve all medicines, retrieve a single medicine by name,
@@ -18,6 +19,14 @@ import uvicorn
 import json
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/medicines")
 def get_all_meds():

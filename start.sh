@@ -16,12 +16,11 @@
 #    b. Changes directory to "backend".
 #    c. Runs the "main.py" script.
 if [ ! -d "venv" ]; then
-    python -m venv venv
+    python3 -m venv venv
     source venv/bin/activate
-    pip install -r requirements.txt
+    pip install -r backend/requirements.txt
     cd backend
     python main.py
-fi
 else
     source venv/bin/activate
     cd backend 
