@@ -63,10 +63,6 @@ Setup scripts are provided for Mac, Linux and Windows. You can run the appropria
 - Upon running the backend server, you can use a tool like [Postman](https://www.postman.com/downloads/) to test the API endpoints. This will allow you to see the data that is being returned from the server.
     - For example, you can use Postman to send a `GET` request to the `http://localhost:8000/medicines` endpoint to see the data that is being returned from the server. 
 - You should be able to see the frontend by opening the `index.html` file in your browser. You can also use the browser's developer tools to debug the frontend code.
-- The `console.log()` and `print()` functions are your friends. Use them to debug your code and see what is happening at different points in your code.
-- If you are stuck, try breaking down the problem into smaller parts and tackle each part one at a time. This will help you to make progress and not get overwhelmed by the challenge.
-    - For example, you can start by calling the backend API using a CLI tool like `curl` or Postman to see the data that is being returned. Then, you can research how to interact with the backend API using JavaScript and implement that in the frontend code.
-
 
 ## Objectives
 - Fetch data from the backend server and send it to the the frontend, displaying it in a user-friendly way.
