@@ -6,7 +6,7 @@ It provides endpoints to retrieve all medicines, retrieve a single medicine by n
 and create a new medicine.
 Endpoints:
 - GET /medicines: Retrieve all medicines from the data.json file.
-- GET /medicines/{med_name}: Retrieve a single medicine by name from the data.json file.
+- GET /medicines/{name}: Retrieve a single medicine by name from the data.json file.
 - POST /medicines/create: Create a new medicine with a specified name and price.
 Functions:
 - get_all_meds: Reads the data.json file and returns all medicines.
@@ -30,22 +30,43 @@ app.add_middleware(
 
 @app.get("/medicines")
 def get_all_meds():
+    """
+    This function reads the data.json file and returns all medicines.
+    Returns:
+        dict: A dictionary of all medicines
+    """
     with open('data.json') as meds:
         data = json.load(meds)
     return data
 
-@app.get("/medicines/{med_name}")
-def get_single_med(med_name: str):
+@app.get("/medicines/{name}")
+def get_single_med(name: str):
+    """
+    This function reads the data.json file and returns a single medicine by name.
+    Args:
+        name (str): The name of the medicine to retrieve.
+    Returns:
+        dict: A dictionary containing the medicine details
+    """
     with open('data.json') as meds:
         data = json.load(meds)
         for med in data["medicines"]:
             print(med)
-            if med['name'] == med_name:
+            if med['name'] == name:
                 return med
     return {"error": "Medicine not found"}
 
 @app.post("/medicines/create")
 def create_med(name: str = Form(...), price: float = Form(...)):
+    """
+    This function creates a new medicine with the specified name and price.
+    It expects the name and price to be provided as form data.
+    Args:
+        name (str): The name of the medicine.
+        price (float): The price of the medicine.
+    Returns:
+        dict: A message confirming the medicine was created successfully.
+    """
     with open('data.json', 'r+') as meds:
         current_db = json.load(meds)
         new_med = {"name": name, "price": price}
@@ -55,6 +76,49 @@ def create_med(name: str = Form(...), price: float = Form(...)):
         meds.truncate()
         
     return {"message": f"Medicine created successfully with name: {name}"}
+
+@app.post("/medicines/update")
+def update_med(name: str = Form(...), price: float = Form(...)):
+    """
+    This function updates the price of a medicine with the specified name.
+    It expects the name and price to be provided as form data.
+    Args:
+        name (str): The name of the medicine.
+        price (float): The new price of the medicine.
+    Returns:
+        dict: A message confirming the medicine was updated successfully.
+    """
+    with open('data.json', 'r+') as meds:
+        current_db = json.load(meds)
+        for med in current_db["medicines"]:
+            if med['name'] == name:
+                med['price'] = price
+                meds.seek(0)
+                json.dump(current_db, meds)
+                meds.truncate()
+                return {"message": f"Medicine updated successfully with name: {name}"}
+    return {"error": "Medicine not found"}
+
+@app.delete("/medicines/delete")
+def delete_med(name: str = Form(...)):
+    """
+    This function deletes a medicine with the specified name.
+    It expects the name to be provided as form data.
+    Args:
+        name (str): The name of the medicine to delete.
+    Returns:
+        dict: A message confirming the medicine was deleted successfully.
+    """
+    with open('data.json', 'r+') as meds:
+        current_db = json.load(meds)
+        for med in current_db["medicines"]:
+            if med['name'] == name:
+                current_db["medicines"].remove(med)
+                meds.seek(0)
+                json.dump(current_db, meds)
+                meds.truncate()
+                return {"message": f"Medicine deleted successfully with name: {name}"}
+    return {"error": "Medicine not found"}
 
 # Add your average function here
 
